@@ -36,16 +36,31 @@
 # log_hi = logger('Hi!')
 # log_hi()
 
-def html_tag(tag):
+# def html_tag(tag):
 
-    def  wrap_text(msg):
-         print('<{0}>{1}</{0}>'.format(tag, msg))
+#     def  wrap_text(msg):
+#          print('<{0}>{1}</{0}>'.format(tag, msg))
 
-    return wrap_text
+#     return wrap_text
 
-print_h1 = html_tag('h1')
-print_h1('Text Headline!')
-print_h1('Another Headline!')
+# print_h1 = html_tag('h1')
+# print_h1('Text Headline!')
+# print_h1('Another Headline!')
 
-print_p = html_tag('p')
-print_p('Test Paragraph!')
+# print_p = html_tag('p')
+# print_p('Test Paragraph!')
+
+# Python Clossures
+
+def outer_function(msg):
+    message = msg
+
+    def inner_function():
+        print(message)
+    
+    return inner_function
+
+hi_func = outer_function('Hi!')
+hello_func = outer_function('Hello!')
+hi_func()
+hello_func()
